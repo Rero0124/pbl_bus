@@ -25,9 +25,9 @@ if (process.env.NODE_ENV === 'production') {
 
 const getConfig = (): Config => {
   const env: ENV = {
-    PORT: isNaN(Number(process.env.PORT)) ? Number(process.env.PORT) : null,
+    PORT: isNaN(Number(process.env.PORT)) ? null : Number(process.env.PORT),
     DB_HOST: process.env.DB_HOST,
-    DB_PORT: isNaN(Number(process.env.DB_PORT)) ? Number(process.env.DB_PORT) : null,
+    DB_PORT: isNaN(Number(process.env.DB_PORT)) ? null : Number(process.env.DB_PORT),
     DB_DATABASE: process.env.DB_DATABASE,
     DB_USER: process.env.DB_USER,
     DB_PASSWORD: process.env.DB_PASSWORD,
