@@ -10,13 +10,17 @@ interface ENV {
   DB_PASSWORD?: string | null;
 }
 
+dotenv.config();
+
 if (process.env.NODE_ENV === 'production') {
-  dotenv.config({ path: path.join(__dirname, '.env.production'), override: true })
+  dotenv.config({ path: path.join(__dirname, '../.env.production'), override: true })
 } else if (process.env.NODE_ENV === 'development') {
-  dotenv.config({ path: path.join(__dirname, '.env.development'), override: true })
+  dotenv.config({ path: path.join(__dirname, '../.env.development'), override: true })
 } else {
   throw new Error('process.env.NODE_ENV를 설정하지 않았습니다!')
 }
+
+console.log(path.join(__dirname, '../.env.development'))
 
 const getConfig = (): Config => {
   const env: ENV = {
