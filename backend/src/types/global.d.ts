@@ -8,6 +8,7 @@ declare namespace NodeJS {
     readonly DB_USER: string | null;
     readonly DB_PASSWORD: string | null;
     readonly API_KEY_DATA_GO_KR: string | null;
+    readonly FRONT_END_URL: string | null;
   }
 }
 
@@ -23,5 +24,6 @@ interface Config {
   DB_USER: string;
   DB_PASSWORD: string;
   API_KEY_DATA_GO_KR: string;
+  FRONT_END_URL: string;
 }
 

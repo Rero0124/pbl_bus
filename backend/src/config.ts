@@ -9,6 +9,7 @@ interface ENV {
   DB_USER: string | null;
   DB_PASSWORD: string | null;
   API_KEY_DATA_GO_KR: string | null;
+  FRONT_END_URL: string | null;
 }
 
 dotenv.config();
@@ -29,7 +30,8 @@ const getConfig = (): Config => {
     DB_DATABASE: process.env.DB_DATABASE,
     DB_USER: process.env.DB_USER,
     DB_PASSWORD: process.env.DB_PASSWORD,
-    API_KEY_DATA_GO_KR: process.env.API_KEY_DATA_GO_KR
+    API_KEY_DATA_GO_KR: process.env.API_KEY_DATA_GO_KR,
+    FRONT_END_URL: process.env.FRONT_END_URL
   }
 
   const data: JsonData = {};
