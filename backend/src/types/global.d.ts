@@ -27,3 +27,10 @@ interface Config {
   FRONT_END_URL: string;
 }
 
+type ExpressRequest = import('express').Request;
+type ExpressResponse = import('express').Response;
+
+interface CustomRequest<ParamType, BodyType> extends ExpressRequest {
+  readonly param: ParamType;
+  readonly body: BodyType;
+}

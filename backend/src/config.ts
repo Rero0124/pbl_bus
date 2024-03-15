@@ -8,7 +8,6 @@ interface ENV {
   DB_DATABASE: string | null;
   DB_USER: string | null;
   DB_PASSWORD: string | null;
-  API_KEY_DATA_GO_KR: string | null;
   FRONT_END_URL: string | null;
 }
 
@@ -22,6 +21,8 @@ if (process.env.NODE_ENV === 'production') {
   throw new Error('process.env.NODE_ENV를 설정하지 않았습니다!')
 }
 
+
+
 const getConfig = (): Config => {
   const env: ENV = {
     PORT: isNaN(Number(process.env.PORT)) ? Number(process.env.PORT) : null,
@@ -30,9 +31,8 @@ const getConfig = (): Config => {
     DB_DATABASE: process.env.DB_DATABASE,
     DB_USER: process.env.DB_USER,
     DB_PASSWORD: process.env.DB_PASSWORD,
-    API_KEY_DATA_GO_KR: process.env.API_KEY_DATA_GO_KR,
     FRONT_END_URL: process.env.FRONT_END_URL
-  }
+  };
 
   const data: JsonData = {};
 
