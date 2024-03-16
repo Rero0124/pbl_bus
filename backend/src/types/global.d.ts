@@ -15,6 +15,11 @@ interface JsonData {
   [key: string]: any;
 }
 
+interface ApiUrlType {
+  group: string;
+  url: string;
+}
+
 interface Config {
   PORT: number;
   DB_HOST: string;
@@ -23,7 +28,8 @@ interface Config {
   DB_USER: string;
   DB_PASSWORD: string;
   FRONT_END_URL: string;
-  API_KEY: string
+  API_KEY: string;
+  API_URL: ApiUrlType[]
 }
 
 type ExpressRequest = import('express').Request;

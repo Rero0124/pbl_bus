@@ -43,6 +43,9 @@ const getConfig = (): Config => {
     data[key] = value;
   }
 
+  data.API_KEY = '';
+  data.API_URL = new Array<ApiUrlType>()
+
   return data as Config;
 }
 
