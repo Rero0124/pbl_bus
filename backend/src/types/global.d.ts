@@ -36,6 +36,16 @@ type ExpressRequest = import('express').Request;
 type ExpressResponse = import('express').Response;
 
 interface CustomRequest<ParamType, BodyType> extends ExpressRequest {
-  readonly param: ParamType;
+  readonly params: ParamType;
   readonly body: BodyType;
+}
+
+type XmlParseDataType = { _text: string };
+
+interface ApiDataType<T> {
+  ServiceResult: {
+    comMsgHeader: {},
+    msgHeader: { headerCd: XmlParseDataType, headerMsg: XmlParseDataType, itemCount: XmlParseDataType },
+    msgBody: { itemList: Array<T> }
+  }
 }
